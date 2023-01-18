@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "inquirer": "^8.2.4",
-    "start": "node bootup.js",
-    "inquirer-file-tree-selection-prompt": "inquirer-file-tree-selection-prompt"
+    "inquirer-tree-prompt": "^1.1.2",
+    "start": "node bootup.js"
   }
 }

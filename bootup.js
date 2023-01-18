@@ -1,66 +1,49 @@
 const inquirer = require('inquirer');
+const TreePrompt = require('inquirer-tree-prompt');
 
-// inquirer
-//     .prompt([
-//         'What would you like to do?'
-//     ])
-//     .then ((answer) => {
-//         'Add'
-//         ,'View'
-//         ,'Update'
-//     })
-//     .catch((error){
-//         if (error.isTtyError){
-
-//         } else {
-//             console.log(err)
-//         }
-//     });
-
-//const TreePrompt=require('inquirer-file-tree-selection-prompt');
-//inquirer.registerPrompt('tree', TreePrompt);
+inquirer.registerPrompt('tree', TreePrompt);
 
 inquirer
     .prompt([
     {
-        type:'list'
+        type:'tree'
         ,name:'action'
         ,message:'What would you like to do?'
-        ,choices: [
+        ,tree: [
             {
             value:"Add"
             ,open: true
-            // ,children:[
-            //     {
-            //         value:"Add a Department..."
-            //     },
-            //     {
-            //         value:"Add a Role..."
-            //     },
-            //     {
-            //         value:"Add an Employee..."
-            //     }]
+            ,children:[
+                {
+                    value:"Add a Department..."
+                },
+                {
+                    value:"Add a Role..."
+                },
+                {
+                    value:"Add an Employee..."
+                }]
             },
             {value:"View"
             ,open: true
-            // ,children:[
-            //     {
-            //         value:"View all Departments..."
-            //     },
-            //     {
-            //         value:"View all Roles..."
-            //     },
-            //     {
-            //         value:"View all Employees..."
-            //     }]
+            ,children:[
+                {
+                    value:"View all Departments..."
+                },
+                {
+                    value:"View all Roles..."
+                },
+                {
+                    value:"View all Employees..."
+                }]
             },
             {
             value:"Update"
             ,open: true
-            // ,children:[
-            //     {
-            //         value:"Update an Employee Role..."
-            //     }]
+            ,children:[
+                {
+                    value:"Update an Employee Role..."
+                }]
             }
         ]
     }
