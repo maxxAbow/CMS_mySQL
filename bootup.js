@@ -21,7 +21,7 @@ const inquirer = require('inquirer');
 //inquirer.registerPrompt('tree', TreePrompt);
 
 inquirer
-    .TreePrompt([
+    .prompt([
     {
         type:'list'
         ,name:'action'
@@ -30,44 +30,45 @@ inquirer
             {
             value:"Add"
             ,open: true
-            ,children:[
-                {
-                    value:"Add a Department..."
-                },
-                {
-                    value:"Add a Role..."
-                },
-                {
-                    value:"Add an Employee..."
-                }]
+            // ,children:[
+            //     {
+            //         value:"Add a Department..."
+            //     },
+            //     {
+            //         value:"Add a Role..."
+            //     },
+            //     {
+            //         value:"Add an Employee..."
+            //     }]
             },
             {value:"View"
             ,open: true
-            ,children:[
-                {
-                    value:"View all Departments..."
-                },
-                {
-                    value:"View all Roles..."
-                },
-                {
-                    value:"View all Employees..."
-                }]
+            // ,children:[
+            //     {
+            //         value:"View all Departments..."
+            //     },
+            //     {
+            //         value:"View all Roles..."
+            //     },
+            //     {
+            //         value:"View all Employees..."
+            //     }]
             },
             {
             value:"Update"
             ,open: true
-            ,children:[
-                {
-                    value:"Update an Employee Role..."
-                }]
+            // ,children:[
+            //     {
+            //         value:"Update an Employee Role..."
+            //     }]
             }
         ]
     }
 ])
 .then(answers =>{
     console.log(JSON.stringify(answers))
-});
+    }
+);
 
 
 
