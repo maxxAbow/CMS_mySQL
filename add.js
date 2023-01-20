@@ -1,3 +1,10 @@
+//Clarifying questions
+const inquirer = require('inquirer');
+
+var addDep = ;
+var addEmp = ;
+var addRole = ;
+
 //query to add department, role, employee
 
 const mysql = require('mysql2');
@@ -13,12 +20,9 @@ const db = mysql.createConnection({
 app.use(exporess.json());
 app.use(express.urlencoded(extended,true));
 
-var addDep = ;
-var addEmp = ;
-var addRole = ;
 
 app.get('/api/CMS',(req,res)=>{
-    db.query('ALTER TABLE CMS.STORAGE (Department, Employee, Role) ?;',[addDep, addEmp, addRole],(err,data)=>{
+    db.query('INSERT INTO CMS.STORAGE (Department, Employee, Role) VALUES ?;',[(addDep, addEmp, addRole)],(err,data)=>{
         res.send(res)
     })
 })

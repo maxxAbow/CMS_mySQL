@@ -55,18 +55,16 @@ inquirer
 );
 
 
-
-//     const prompts = new Rx.Subject();
-// inquirer.prompt(prompts);
-
-// // At some point in the future, push new questions
-// prompts.next({
-//   /* question... */
-// });
-// prompts.next({
-//   /* question... */
-// });
-
-// // When you're done
-// prompts.complete();
-// inquirer.prompt(prompts).ui.process.subscribe(onEachAnswer, onError, onComplete);
+//direct to next step: add, update, or view
+if (prompt.answers.includes('/Add/*')) () => {
+    var addInfo = require('./add.js');
+}
+else if (prompt.answers.includes('/Update/*')) () => {
+    var updateInfo = require('./update.js');
+}
+else if (prompt.answers.includes('/View/*')) () => {
+    var viewInfo = require('./view.js');
+}
+else (
+    console.log('Please provide valid input...')
+);
