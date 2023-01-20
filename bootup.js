@@ -1,5 +1,6 @@
 const inquirer = require('inquirer');
 const TreePrompt = require('inquirer-tree-prompt');
+const fs = require('fs');
 
 inquirer.registerPrompt('tree', TreePrompt);
 
